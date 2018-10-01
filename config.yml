@@ -1,0 +1,43 @@
+db:
+  driver: mysql
+  host: localhost
+  name: root
+  password:
+  dbname: slabel
+
+twig:
+  template_paths:
+    - templates
+  debug: true
+
+router:
+  -
+    path: '/'
+    name: home
+    controller: HomeController
+    action: home
+  -
+    path: '/user/list'
+    name: list
+    controller: ListController
+    action: list
+  -
+    path: '/user/register'
+    name: register
+    controller: UserController
+    action: register
+  -
+    path: '/user/login'
+    name: login
+    controller: LoginController
+    action: login
+  -
+    path: '/user/logout'
+    name: logout
+    controller: LogoutController
+    action: logout
+  -
+    path: '/user/blog'
+    name: blog
+    controller: blogController
+    action: blog

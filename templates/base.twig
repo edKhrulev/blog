@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Document</title>
+	<link href="/public/bs.css" rel="stylesheet"/>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Hello, {{ request.getSession().get('userName', 'Anon') }}</a>
+
+	<ul class="navbar-nav m-lg-auto">
+	  <li class="nav-item"><a class="nav-link" href="{{ url('home') }}">Home</a></li>
+        {% if not request.getSession().get('userName') %}
+	  <li class="nav-item"><a class="nav-link" href="{{ url('register') }}">Register</a></li>
+	  <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">Login</a></li>
+        {% endif %}
+      <li class="nav-item"><a class="nav-link" href="{{ url('list') }}">List Users</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ url('blog') }}">Blog</a> </li>
+	</ul>
+          <a class="nav-bar-brand" href="{{ url('logout') }}">Log out</a>
+      </nav>
+
+      <div class="container">
+	{% block content %}
+	  <h1>Default</h1>
+	{% endblock content %}
+      </div>
+    </body>
+</html>

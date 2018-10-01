@@ -1,0 +1,13 @@
+
+<div class="d-flex align-content-start flex-wrap">
+
+    {% for comment in comments %}
+         <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <p class="card-subtitle">user -> {{ comment.name }}</p>
+                <h5 class="card-text">{{ comment.message }}</h5>
+              </div>
+        </div>
+    {% endfor %}
+
+</div>
